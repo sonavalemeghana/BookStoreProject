@@ -1,0 +1,15 @@
+<div class="main">
+    <h1>SignIn</h1>
+    <div class="item-icon">
+        <input type="text" [(ngModel)]="email" placeholder="Email">
+    </div>
+    <br/>
+    <div class="item-icon">
+        <input type="password" [(ngModel)]="password" placeholder="Password">
+     </div>
+     <br/>
+    <div>
+        <button (click)="signIn()" [disabled]="email === '' || password === ''">SignIn</button>
+    </div>
+    
+</div>

@@ -1,0 +1,49 @@
+<p>Search BY Category</p>
+
+<div>
+    <select [(ngModel)]="category" (change)="onChangeCategory()">
+        <option value="0">LITERATURE</option>
+        <option value="1">NONFICTION</option>
+        <option value="2">ACTION</option>
+        <option value="3">THRILLER</option>
+        <option value="4">TECHNOLOGY</option>
+        <option value="5">DRAMA</option>
+        <option value="6">POETRY</option>
+        <option value="7">MEDIA</option>
+        <option value="8">OTHERS</option>
+    </select>
+</div>
+<br /><br />
+<div *ngIf="bookList.length === 0"> NO Result found for that cateogry.</div>
+<br /><br />
+<div *ngIf="bookList.length > 0" class="table-div">
+    <table border="1">
+        <tr>
+            <th></th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>TotalBook</th>
+            <!-- <th>Operation</th> -->
+        </tr>
+       <tr *ngFor="let bookItem of bookList" (click)="onRowClick(bookItem)">
+           <td>
+               <span *ngIf="bookItem?.imageURL !== null">
+                    <img src="{{bookItem?.imageURL}}" />
+                </span>
+            </td>
+            <td>{{bookItem?.title}}</td>
+            <td>{{bookItem?.author}}</td>
+            <td>{{bookItem?.category}}</td>
+            <td>{{bookItem?.price}}</td>
+            <td>{{bookItem?.totalCount}}</td>
+            <!-- <td>
+                <button (click)="onEdit(bookItem)">Edit</button>
+                <button (click)="onDelete(bookItem)">Delete</button>
+                
+            </td> -->
+       </tr>
+    </table>
+</div>
+

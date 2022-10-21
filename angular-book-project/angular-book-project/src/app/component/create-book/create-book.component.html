@@ -1,0 +1,47 @@
+<p>Create Book</p>
+
+<div class="table-main">
+    <table>
+        <tr>
+            <td>Title</td>
+            <td><input type="text" [(ngModel)]="title" /></td>
+        </tr>
+        <tr>
+            <td>Author</td>
+            <td><input type="text" [(ngModel)]="author"/></td>
+        </tr>
+        <tr>
+            <td>Category</td>
+            <td>
+                <select [(ngModel)]="category">
+                    <option value="0">LITERATURE</option>
+                    <option value="1">NONFICTION</option>
+                    <option value="2">ACTION</option>
+                    <option value="3">THRILLER</option>
+                    <option value="4">TECHNOLOGY</option>
+                    <option value="5">DRAMA</option>
+                    <option value="6">POETRY</option>
+                    <option value="7">MEDIA</option>
+                    <option value="8">OTHERS</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Price</td>
+            <td><input type="text" [(ngModel)]="price"/></td>
+        </tr>
+        <tr>
+            <td>TotalBook</td>
+            <td><input type="text" [(ngModel)]="totalCount"/></td>
+        </tr>
+        <tr>
+            <td>ImageURL</td>
+            <td><input type="text" [(ngModel)]="imageURL"/></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button (click)="createBook()">{{ isEdit ? 'Edit' : 'Create'}}</button>
+            </td>
+        </tr>
+    </table>
+</div>

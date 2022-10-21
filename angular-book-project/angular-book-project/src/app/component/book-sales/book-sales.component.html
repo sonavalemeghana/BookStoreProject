@@ -1,0 +1,31 @@
+<p>Sales</p>
+<br /><br />
+<div *ngIf="!!bookItem" class="table-div">
+    <table border="1">
+        <tr>
+            <th></th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>TotalBook</th>
+            <th>Operation</th>
+        </tr>
+       <tr>
+           <td>
+               <span *ngIf="bookItem?.imageURL !== null">
+                    <img src="{{bookItem?.imageURL}}" />
+                </span>
+            </td>
+            <td>{{bookItem?.title}}</td>
+            <td>{{bookItem?.author}}</td>
+            <td>{{bookItem?.category}}</td>
+            <td>{{bookItem?.price}}</td>
+            <td>{{bookItem?.totalCount}}</td>
+            <td>
+                <button (click)="onSale()">Sale</button>
+                <!-- <button (click)="report(bookItem)">Report</button> -->
+            </td>
+       </tr>
+    </table>
+</div>

@@ -1,0 +1,33 @@
+<p>Search By Author</p>
+
+<div>
+   <input type="text" [(ngModel)]="author" (keydown)="onKeyDown()" placeholder="Search By Author"/>
+</div>
+<br /><br />
+<div *ngIf="bookList.length === 0"> NO Result found for that Author.</div>
+<br /><br />
+<div *ngIf="bookList.length > 0" class="table-div">
+    <table border="1">
+        <tr>
+            <th></th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>TotalBook</th>
+            <!-- <th>Operation</th> -->
+        </tr>
+       <tr *ngFor="let bookItem of bookList">
+           <td>
+               <span *ngIf="bookItem?.imageURL !== null">
+                    <img src="{{bookItem?.imageURL}}" />
+                </span>
+            </td>
+            <td>{{bookItem?.title}}</td>
+            <td>{{bookItem?.author}}</td>
+            <td>{{bookItem?.category}}</td>
+            <td>{{bookItem?.price}}</td>
+            <td>{{bookItem?.totalCount}}</td>
+       </tr>
+    </table>
+</div>
